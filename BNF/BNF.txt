@@ -1,12 +1,5 @@
 
 
-
-
-
-
-
-
-
 //Variable
 
 Opcion 1;
@@ -16,14 +9,27 @@ Opcion 1;
 Nota: revisa si estan todas las combinaciones
 <Nombre_Variable>::- <Letra_Mayuscula>| <Letra_Mayuscula><Letra_Minuscula>|<Letra_Mayuscula><Letra_Minuscula><Digito>|
 		     |<Letra_Mayuscula><Digito>|<Letra_Mayuscula><Digito><Letra_Minuscula>|<Nombre_Variable>
-
 		    
+	      
+<Tipo_de_Dato>::- <Entero>|<Decimal>|<Cadena>
+
+<Entero>::<Signo><Numero>
+<Numero>::<Digito>|<Numero><Digitol>
+
+<Decimal>::<Signo><Numero>'.'<Numero>
+<Numero>::<Digito>|<Numero><Digitol>
+
+Cadena::-<ComillaDoble_inicio><Alfanumerico><<ComillaDobel_final>
+
+
+<Signo>::- +|-
+<ComillaDoble_inicio>::- "
+<ComillaDobel_final>::- "
+
+
 <Letra_Mayuscula>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
 <Letra_Miniscula>::-a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-<Digito>::-0|1|2|3|4|5|6|7|8|9	       
-
-<Tipo_de_Dato>::- entero|decimal|cadena
-
+<Digito>::-0|1|2|3|4|5|6|7|8|9
 
 // Opcion 2; de como Definir una variable mas facil 
 
