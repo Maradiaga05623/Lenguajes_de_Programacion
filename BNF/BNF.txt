@@ -4,13 +4,18 @@
 
 Opcion 1;
 
+4. Declaracion de Variable
 <Variable>::='Definir'<Nombre_Variable><Tipo_de_Dato>
 
 Nota: revisa si estan todas las combinaciones
+
+3.Nombre de Variable
+
 <Nombre_Variable>::- <Letra_Mayuscula>| <Letra_Mayuscula><Letra_Minuscula>|<Letra_Mayuscula><Letra_Minuscula><Digito>|
 		     |<Letra_Mayuscula><Digito>|<Letra_Mayuscula><Digito><Letra_Minuscula>|<Nombre_Variable>
 		    
-	      
+5.Tipo de dato
+      
 <Tipo_de_Dato>::- <Entero>|<Decimal>|<Cadena>
 
 <Entero>::<Signo><Numero>
@@ -29,7 +34,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 <Letra_Mayuscula>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
 <Letra_Miniscula>::-a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-<Digito>::-0|1|2|3|4|5|6|7|8|9
+<Digito>::-	0|1|2|3|4|5|6|7|8|9
 
 <Combiancion>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
 		|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
@@ -49,6 +54,42 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 <Tipo_de_Dato>::- entero|decimal|cadena
 
+
+7. recibir Datos 
+
+
+	<Resivir_Datos>::-'Leer'<Nombre_Variable>';'
+
+8.Imprimir:
+
+	<Mostrar>::-'Imprimir'<Nombre_variable>|'Imprimir'<Cadena>';'
+
+9 Posicion:
+
+	<Posicion>::-'Cursor'<Numero><Coma><Numero>';'
+
+
+<Parentecis_Inical>::- (
+<Parentecis_Final>::-  )
+<Coma>::- , 
+
+
+11 Operaciones Aritmeticas
+
+<Operacion>::-	<Numero><Operador_basico><Numero>|<Operacion><operador_Basico><Numero>
+<Operador_Basico>::- +|-|*|/
+
+
+
+12. Operadores Racionales 
+<operador_relacional>::= =|<>|<|>|<=|>=
+
+13. Asignacion  
+
+
+<Asignacion>::- <Nombre_Variable><Asignacion><Tipo_de_Dato>';'
+
+<Asignacion>::- <-
 
 
 
