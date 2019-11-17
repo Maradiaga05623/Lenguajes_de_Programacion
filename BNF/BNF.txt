@@ -19,7 +19,7 @@ Nota: revisa si estan todas las combinaciones
 <Decimal>::<Signo><Numero>'.'<Numero>
 <Numero>::<Digito>|<Numero><Digitol>
 
-Cadena::-<ComillaDoble_inicio><Alfanumerico><<ComillaDobel_final>
+Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 
 <Signo>::- +|-
@@ -31,6 +31,10 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><<ComillaDobel_final>
 <Letra_Miniscula>::-a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
 <Digito>::-0|1|2|3|4|5|6|7|8|9
 
+<Combiancion>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+		|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+		|0|1|2|3|4|5|6|7|8|9|
+
 // Opcion 2; de como Definir una variable mas facil 
 
 <Variable>::='Definir'<Nombre_Variable><Tipo_de_Dato>
@@ -39,8 +43,9 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><<ComillaDobel_final>
 
 <Letra_Mayuscula>::= A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
 
-<Alfanumerico>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-		 |0|1|2|3|4|5|6|7|8|9
+<Alfanumerico>::-<Combinacion>|<Combinacion><Alfanumerico>
+<Combiancion>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+		 |0|1|2|3|4|5|6|7|8|9|
 
 <Tipo_de_Dato>::- entero|decimal|cadena
 
@@ -49,7 +54,4 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><<ComillaDobel_final>
 
 //hay que agregar las palabras reservadas de nuesta bnf ,  ejemplo:
 
-< palabra clave > :: = abstract | boolean | break | byte | case | catch | char | class | const | continue | default | do 
-			| double | else | extends | final | finally | float | for | goto | if | implements | import | instanceof 
-			| int | interface | long | native | new | package | private | protected | public | return | short | static
-			| super | switch | synchronized | this | throw | throws | transient | try | void | volatile | while
+< palabra clave > :: = Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|imprimir|Leer|Mientras|Repetir|si|sino 
