@@ -1,21 +1,11 @@
 
 
-//Variable
-
-Opcion 1;
-
-4. Declaracion de Variable
 <Variable>::='Definir'<Nombre_Variable><Tipo_de_Dato>
 
-Nota: revisa si estan todas las combinaciones
+<Nombre_Variable>::- <Letra_Mayuscula>|<Letra_Mayuscula><alfaNumerico>|<Nombre_Variable>
 
-3.Nombre de Variable
+<Alfanumerico>::-<Combinacion>|<Combinacion><Alfanumerico>
 
-<Nombre_Variable>::- <Letra_Mayuscula>| <Letra_Mayuscula><Letra_Minuscula>|<Letra_Mayuscula><Letra_Minuscula><Digito>|
-		     |<Letra_Mayuscula><Digito>|<Letra_Mayuscula><Digito><Letra_Minuscula>|<Nombre_Variable>
-		    
-5.Tipo de dato
-      
 <Tipo_de_Dato>::- <Entero>|<Decimal>|<Cadena>
 
 <Entero>::<Signo><Numero>
@@ -27,57 +17,41 @@ Nota: revisa si estan todas las combinaciones
 Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 
-<Signo>::- +|-
-<ComillaDoble_inicio>::- "
-<ComillaDobel_final>::- "
+
+//Flujo de Instrucciones 
 
 
-<Letra_Mayuscula>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
-<Letra_Miniscula>::-a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-<Digito>::-	0|1|2|3|4|5|6|7|8|9
+<Sentencia>::=<Si>|<Bucle Mientras>|<Bloque Repetir>|<Sino>
 
-<Combiancion>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
-		|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-		|0|1|2|3|4|5|6|7|8|9|
+<Si>::= 'Si'<condicion>'Entonces'<sentencia>'Fin Si'
+<Sino>::-'Si'<condicion>'Entonces'<sentencia>'Sino'<sentencia>
+<Bucle Mientras>::-'Minetras'<condicion>'Hacer'<sentencia>'Fin Mientras'
+<Bloque Repetir>::-'Repetir'<Sentencia>'Hasta Que'<condicion>
 
-// Opcion 2; de como Definir una variable mas facil 
 
-<Variable>::='Definir'<Nombre_Variable><Tipo_de_Dato>
+<condicion>::- <Nombre_Variable><operador relacional><expresion>
+<sentencia>::=<Nombre_Variable>::=<expresion>
+<expresion>::= <Nombre_Variable>|<digito>
 
-<Nombre_Variable>::- <Letra_Mayuscula>|<Letra_Mayuscula><alfaNumerico>|Nombre_Variable
-
-<Letra_Mayuscula>::= A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
-
-<Alfanumerico>::-<Combinacion>|<Combinacion><Alfanumerico>
-<Combiancion>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-		 |0|1|2|3|4|5|6|7|8|9|
-
-<Tipo_de_Dato>::- entero|decimal|cadena
 
 
 7. recibir Datos 
 
 
-	<Resivir_Datos>::-'Leer'<Nombre_Variable>';'
-
+	<Resivir_Datos>::-'Leer'<Nombre_Variable>
 8.Imprimir:
 
-	<Mostrar>::-'Imprimir'<Nombre_variable>|'Imprimir'<Cadena>';'
+	<Mostrar>::-'Imprimir'<Nombre_variable>|'Imprimir'<Cadena>
 
 9 Posicion:
 
-	<Posicion>::-'Cursor'<Numero><Coma><Numero>';'
-
-
-<Parentecis_Inical>::- (
-<Parentecis_Final>::-  )
-<Coma>::- , 
+	<Posicion>::-'Cursor'<Numero><Coma><Numero>
 
 
 11 Operaciones Aritmeticas
 
 <Operacion>::-	<Numero><Operador_basico><Numero>|<Operacion><operador_Basico><Numero>
-<Operador_Basico>::- +|-|*|/
+
 
 
 
@@ -87,7 +61,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 13. Asignacion  
 
 
-<Asignacion>::- <Nombre_Variable><Asignacion><Tipo_de_Dato>';'
+<Asignacion>::- <Nombre_Variable><Asignacion><Tipo_de_Dato>
 
 <Asignacion>::- <-
 
@@ -96,3 +70,26 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 //hay que agregar las palabras reservadas de nuesta bnf ,  ejemplo:
 
 < palabra clave > :: = Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|imprimir|Leer|Mientras|Repetir|si|sino 
+
+
+
+//Terminales 
+
+<Letra_Mayuscula>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+
+<Combiancion>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+		|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+		|0|1|2|3|4|5|6|7|8|9|
+		    
+<Letra_Mayuscula>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+<Letra_Miniscula>::-a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+<Digito>::-0|1|2|3|4|5|6|7|8|9
+
+<Signo>::- +|-
+<ComillaDoble_inicio>::- "
+<ComillaDobel_final>::- "
+<operador relacional>::- =|<>|<|>|<=|>=
+<Operador_Basico>::- +|-|*|/
+<Parentecis_Inical>::- (
+<Parentecis_Final>::-  )
+<Coma>::- , 
