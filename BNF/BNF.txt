@@ -1,4 +1,4 @@
-
+﻿
 
 <Variable>::='Definir'<Nombre_Variable><Tipo_de_Dato>
 
@@ -8,11 +8,11 @@
 
 <Tipo_de_Dato>::- <Entero>|<Decimal>|<Cadena>
 
-<Entero>::<Signo><Numero>
-<Numero>::<Digito>|<Numero><Digitol>
+<Entero>::-<Signo><Numero>
+<Numero>::-<Digito>|<Numero><Digitol>
 
-<Decimal>::<Signo><Numero>'.'<Numero>
-<Numero>::<Digito>|<Numero><Digitol>
+<Decimal>::-<Signo><Numero>'.'<Numero>
+<Numero>::-<Digito>|<Numero><Digitol>
 
 Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
@@ -38,7 +38,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 7. recibir Datos 
 
 
-	<Resivir_Datos>::-'Leer'<Nombre_Variable>
+	<Recibir_Datos>::-'Leer'<Nombre_Variable>
 8.Imprimir:
 
 	<Mostrar>::-'Imprimir'<Nombre_variable>|'Imprimir'<Cadena>
@@ -50,13 +50,13 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 11 Operaciones Aritmeticas
 
-<Operacion>::-	<Numero><Operador_basico><Numero>|<Operacion><operador_Basico><Numero>
+<Operacion>::-	<Numero><Operador_basico><Numero>|<Operacion><Operador_Basico><Numero>
 
 
 
 
 12. Operadores Racionales 
-<operador_relacional>::= =|<>|<|>|<=|>=
+<Operador_relacional>::= =|<>|<|>|<=|>=
 
 13. Asignacion  
 
@@ -77,7 +77,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 <Letra_Mayuscula>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
 
-<Combiancion>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+<Combinacion>::-A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
 		|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
 		|0|1|2|3|4|5|6|7|8|9|
 		    
@@ -87,9 +87,9 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 <Signo>::- +|-
 <ComillaDoble_inicio>::- "
-<ComillaDobel_final>::- "
+<ComillaDoble_final>::- "
 <operador relacional>::- =|<>|<|>|<=|>=
 <Operador_Basico>::- +|-|*|/
-<Parentecis_Inical>::- (
-<Parentecis_Final>::-  )
+<Parentesis_Inicial>::- (
+<Parentesis_Final>::-  )
 <Coma>::- , 
