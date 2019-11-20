@@ -1,6 +1,6 @@
 ﻿
 
-<Variable>::='Definir'<Nombre_Variable><Tipo_de_Dato>
+<Variable>::='definir'<Nombre_Variable><Tipo_de_Dato>
 
 <Nombre_Variable>::- <Letra_Mayuscula>|<Letra_Mayuscula><alfaNumerico>|<Nombre_Variable>
 
@@ -8,13 +8,13 @@
 
 <Tipo_de_Dato>::- <Entero>|<Decimal>|<Cadena>
 
-<Entero>::-<Signo><Numero>
+<Entero>::-<Signo><Numero>|<Numero>
 <Numero>::-<Digito>|<Numero><Digitol>
 
-<Decimal>::-<Signo><Numero>'.'<Numero>
+<Decimal>::-<Signo><Numero>'.'<Numero>|<Numero>'.'<Numero>
 <Numero>::-<Digito>|<Numero><Digitol>
 
-Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
+Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 
 
 
@@ -23,34 +23,36 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDobel_final>
 
 <Sentencia>::=<Si>|<Bucle Mientras>|<Bloque Repetir>|<Sino>
 
-<Si>::= 'Si'<condicion>'Entonces'<sentencia>'Fin Si'
-<Sino>::-'Si'<condicion>'Entonces'<sentencia>'Sino'<sentencia>
-<Bucle Mientras>::-'Minetras'<condicion>'Hacer'<sentencia>'Fin Mientras'
-<Bloque Repetir>::-'Repetir'<Sentencia>'Hasta Que'<condicion>
+<Si>::= 'Si'<Condicion>'Entonces'<Sentencia>'Fin Si'
+<Sino>::-'Si'<Condicion>'Entonces'<Sentencia>'Sino'<Sentencia>
+<Bucle_Mientras>::-'Mientras'<Condicion>'Hacer'<Sentencia>'Fin Mientras'
+<Bloque_Repetir>::-'Repetir'<Sentencia>'Hasta Que'<Condicion>
 
 
-<condicion>::- <Nombre_Variable><operador relacional><expresion>
-<sentencia>::=<Nombre_Variable>::=<expresion>
-<expresion>::= <Nombre_Variable>|<digito>
+<Condicion>::- <Nombre_Variable><Operador_relacional><Expresion>
+<Sentencia>::=<Nombre_Variable>::=<Expresion>
+<Expresion>::= <Nombre_Variable>|<Digito>
 
 
 
-7. recibir Datos 
+//7. recibir Datos 
 
 
-	<Recibir_Datos>::-'Leer'<Nombre_Variable>
-8.Imprimir:
+	<Recibir_Datos>::-'leer'<Nombre_Variable>
+//8.Imprimir:
 
-	<Mostrar>::-'Imprimir'<Nombre_variable>|'Imprimir'<Cadena>
+	<Mostrar>::-'imprimir'<Nombre_variable>|'imprimir'<Cadena>|
 
-9 Posicion:
+//9 Posicion:
 
 	<Posicion>::-'Cursor'<Numero><Coma><Numero>
+//10 Cursor:
 
+<Cursor>::-cursor<Parentesis_Inicial><Entero><Coma><Entero><Parentesis_Final>
 
 11 Operaciones Aritmeticas
 
-<Operacion>::-	<Numero><Operador_basico><Numero>|<Operacion><Operador_Basico><Numero>
+<Operacion>::-<Numero><Operador_basico><Numero>|<Operacion><Operador_Basico><Numero>
 
 
 
