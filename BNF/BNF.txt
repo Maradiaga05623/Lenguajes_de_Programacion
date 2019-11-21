@@ -51,11 +51,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 
 //9 Posicion:
 
-	<Posicion>::-'Cursor'<Numero><Coma><Numero>
-//10 Cursor:
-
-<Cursor>::-cursor<Parentesis_Inicial><Entero><Coma><Entero><Parentesis_Final>
-
+	<Posicion>::-'Cursor'<Entero><Coma><Entero>
 11 Operaciones Aritmeticas
 
 <Operacion>::-<Numero><Operador_basico><Numero>|<Operacion><Operador_Basico><Numero>
