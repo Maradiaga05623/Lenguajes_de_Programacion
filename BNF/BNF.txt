@@ -2,7 +2,7 @@
 
 <Variable>::='definir'<Nombre_Variable><Tipo_de_Dato>
 
-<Nombre_Variable>::- <Letra_Mayuscula>|<Letra_Mayuscula><alfaNumerico>|<Nombre_Variable>
+<Nombre_Variable>::- <Letra_Mayuscula>|<Letra_Mayuscula><alfaNumerico>
 
 <Alfanumerico>::-<Combinacion>|<Combinacion><Alfanumerico>
 
@@ -12,7 +12,7 @@
 <Numero>::-<Digito>|<Numero><Digitol>
 
 <Decimal>::-<Signo><Numero>'.'<Numero>|<Numero>'.'<Numero>
-<Numero>::-<Digito>|<Numero><Digitol>
+
 
 Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 
@@ -71,7 +71,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 
 //hay que agregar las palabras reservadas de nuesta bnf ,  ejemplo:
 
-< palabra clave > :: = Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|imprimir|Leer|Mientras|Repetir|si|sino 
+< palabra_clave > :: = Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|imprimir|Leer|Mientras|Repetir|si|sino 
 
 
 
