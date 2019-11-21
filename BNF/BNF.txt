@@ -1,6 +1,12 @@
 ﻿
 
-<Variable>::='definir'<Nombre_Variable><Tipo_de_Dato>
+<lenguaje>::-<conjunto_de_instrucciones>
+<conjunto_de_instrucciones>::-<instruccion>|<conjunto_de_instrucciones><instruccion>
+
+<instruccion>::-<Definir_Variable>|<Nombre_Variable>|<Sentencias>|<leer>|<imprimir>
+		|<Posicion>|<Asignacion>|<Operacion>
+
+<Definir_Variable>::-'definir'<Nombre_Variable><Tipo_de_Dato>
 
 <Nombre_Variable>::- <Letra_Mayuscula>|<Letra_Mayuscula><alfaNumerico>
 
@@ -38,10 +44,10 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 //7. recibir Datos 
 
 
-	<Recibir_Datos>::-'leer'<Nombre_Variable>
+	<leer>::-'leer'<Nombre_Variable>
 //8.Imprimir:
 
-	<Mostrar>::-'imprimir'<Nombre_variable>|'imprimir'<Cadena>|
+	<imprimir>::-'imprimir'<Nombre_variable>|'imprimir'<Cadena>|
 
 //9 Posicion:
 
@@ -65,14 +71,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 
 <Asignacion>::- <Nombre_Variable><Asignacion><Tipo_de_Dato>
 
-<Asignacion>::- <-
-
-
-
-//hay que agregar las palabras reservadas de nuesta bnf ,  ejemplo:
-
-< palabra_clave > :: = Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|imprimir|Leer|Mientras|Repetir|si|sino 
-
+<Asignacion>::- '<-'
 
 
 //Terminales 
@@ -95,3 +94,6 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 <Parentesis_Inicial>::- (
 <Parentesis_Final>::-  )
 <Coma>::- , 
+
+
+< palabra_clave > :: = Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|imprimir|Leer|Mientras|Repetir|si|sino 
