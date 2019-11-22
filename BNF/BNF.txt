@@ -59,7 +59,7 @@ Cadena::-'"'<Alfanumerico>'"'
 
 
 
-12. Operadores Racionales 
+12. Operadores Relacionales 
 <Operador_relacional>::= =|<>|<|>|<=|>=
 
 13. Asignacion  
