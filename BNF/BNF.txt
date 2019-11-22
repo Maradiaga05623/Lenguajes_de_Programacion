@@ -15,12 +15,12 @@
 <Tipo_de_Dato>::- <Entero>|<Decimal>|<Cadena>
 
 <Entero>::-<Signo><Numero>|<Numero>
-<Numero>::-<Digito>|<Numero><Digitol>
+<Numero>::-<Digito>|<Numero><Digito>
 
 <Decimal>::-<Signo><Numero>'.'<Numero>|<Numero>'.'<Numero>
 
 
-Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
+Cadena::-'"'<Alfanumerico>'"'
 
 
 
@@ -32,7 +32,7 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 <Si>::= 'Si'<Condicion>'Entonces'<Sentencia>'Fin Si'
 <Sino>::-'Si'<Condicion>'Entonces'<Sentencia>'Sino'<Sentencia>
 <Bucle_Mientras>::-'Mientras'<Condicion>'Hacer'<Sentencia>'Fin Mientras'
-<Bloque_Repetir>::-'Repetir'<Sentencia>'Hasta Que'<Condicion>
+<Bucle_Repetir>::-'Repetir'<Sentencia>'Hasta Que'<Condicion>
 
 
 <Condicion>::- <Nombre_Variable><Operador_relacional><Expresion>
@@ -65,9 +65,9 @@ Cadena::-<ComillaDoble_inicio><Alfanumerico><ComillaDoble_final>
 13. Asignacion  
 
 
-<Asignacion>::- <Nombre_Variable><Asignacion><Tipo_de_Dato>
+<Asignacion>::- <Nombre_Variable><'<-'><Tipo_de_Dato>
 
-<Asignacion>::- '<-'
+
 
 
 //Terminales 
