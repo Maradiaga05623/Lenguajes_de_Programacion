@@ -9,6 +9,7 @@ int main(){
 		FILE *archivo;
 	char caracter;
 	
+	//se lee lo que esta dentro de analizardor.txt 
 	archivo = fopen("analizador.txt","r");
 	
 	if (archivo == NULL)
