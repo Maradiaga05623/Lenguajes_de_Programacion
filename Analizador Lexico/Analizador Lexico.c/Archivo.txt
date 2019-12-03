@@ -1,0 +1,5 @@
+{
+definir A;
+A == -4.2 + 34;
+mientras(A < 3)
+}
