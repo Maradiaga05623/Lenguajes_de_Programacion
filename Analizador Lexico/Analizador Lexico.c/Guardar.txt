@@ -1,1 +1,0 @@
-<Tkn_corchete_abierto><Tkn_parentesis><Tkn_parentesis><Tkn_corchete_cerrado>
