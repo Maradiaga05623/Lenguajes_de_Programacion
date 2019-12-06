@@ -3,7 +3,7 @@
 #include <string.h> //
 
 
-int (){
+int main (){
 		
 	char estadofinal[100];
 	FILE *archivo; 			//FILE nos permite abrir y crear ficheros en el disco
@@ -31,8 +31,7 @@ int (){
 										  //entrada.txt es el nombre del fichero donde se guarda los archivoz a leer por el analizador lexico
 	 									 //y la r es de reading en español lectura. que solo va a leer ese fichero
 		
-		printf("Para que el archivo sea leido correctamente cada instruccion o palabra reservada deben estar separadas por espacios.");
-		printf("\n--------------------------------------------------------------------------------------------------------------------- \n\n");
+		printf("\n");
 	if (archivo == NULL){
 		
         printf("\nError No se pudo abrir el fichero. \n\n");
@@ -46,6 +45,7 @@ int (){
 	    	caract[i]=caracter;
             i++;
         	}
+        	
 			if(caracter>='0' && caracter<='9' ){
 				if (est==0|| est==1)
 					est=1;
@@ -56,7 +56,7 @@ int (){
 				else if(est==4||est==8){
 					est=8;
 				}
-				}
+			}
 				
 			else if(caracter=='.' && (est==1)){
 					est=2;		
@@ -78,9 +78,148 @@ int (){
 			else if(caracter=='<' || caracter=='>'){
 				strcat(estado, "<Tkn_Operador_Logico>");
 			}
+		else if(caracter=='{'){
+				strcat(estado, "<Tkn_Abrir_Instruccion>");
+			}
+			else if(caracter=='}'){
+				strcat(estado, "<Tkn_Cerrar_Instruccion>");
+			}
+			else if(caracter==' '){
+				if(est==1){
+					strcat(estado, "<Tkn_Entero>");
+					est=0;
+					i=0;
+				}
+				else if(est==3){
+						strcat(estado, "<Tkn_Decimal>");
+						est=0;
+						i=0;
+				}
+				else if(est==4){
+						strcat(estado, "<Tkn_Cadena>");
+						est=0;
+						i=0;
+				}
+				else if(est==8){
+						strcat(estado, "<Tkn_Alphanum>");
+						est=0;
+						i=0;
+				}
+			
+			strcat(estado, "<Tkn_Spc>");
+			PReservada(caract,stringFinal,estado,i);
+			memset(caract, 0, sizeof caract);
+			i=0;
+			 
 		}
-		
-		
-	 
-	 
+			 
+		}
+		if(caracter== EOF){
+				if(est==1){
+				strcat(estado, "<Tkn_Entero>");
+				est=0;
+				i=0;
+			}
+			else if(est==3){
+					strcat(estado, "<Tkn_Decimal>");
+					est=0;
+					i=0;
+			}
+			else if(est==4){
+					strcat(estado, "<Tkn_Cadena>");
+					est=0;
+					i=0;
+			}
+			else if(est==8){
+					strcat(estado, "<Tkn_Alphanum>");
+					est=0;
+					i=0;
+			}
+			strcat(estado, "<Tkn_EOF>");
+			PReservada(caract,stringFinal,estado,i);
+			memset(caract, 0, sizeof caract);
+			i=0;
+	    }
+	    
+	    printf("%s \n",stringFinal);
+        }
+        fclose(archivo);
+	
+	
+	return 0;
 }
+
+void Limpiar(c,e){
+		memset(e, 0, sizeof c);
+		memset(e, 0, sizeof c);
+};
+
+int PReservada(caract,stringFinal,estado,i){   // se declaran las palabras reservadas en un arreglo 
+											   //Para que depues sea mas facil identificarlos.
+	int x=0;
+	int igualdad=1;
+	char PReservadas[13][20] =
+	{ "definir",
+	  "leer",
+	  "imprimir",
+	  "cursor",
+	  "repetir",
+	  "mientras",
+	  "hacer",
+	  "hasta",
+	  "repetir",
+	  "si",
+	  "sino",
+	  "finsi",
+	  "<-",
+	  "<=",
+	  ">=",
+	  "==",
+	  "!="
+	};
+	
+	for (x = 0; x < 17; x++)
+	{	
+			
+		int igualdad = strcmp(caract,PReservadas[x]);
+		if (igualdad==0){
+			if(x==12){
+				strcat(stringFinal, "<Tkn_Asignacion>");
+				strcat(stringFinal, "<Tkn_Spc>");
+				Limpiar(caract,estado);
+				i=0;	
+			}
+			else{
+			
+			strcat(stringFinal, "<Tkn_");
+			strcat(stringFinal, PReservadas[x]);
+			strcat(stringFinal, ">");
+			strcat(stringFinal, "<Tkn_Spc>");
+			Limpiar(caract,estado);
+			i=0;
+			}
+			break;
+		}
+		else if(igualdad==0 && (x>=13||x<=16)){
+		strcat(stringFinal, "<Tkn_Operador_Logico>");;
+			strcat(stringFinal, "<Tkn_Spc>");
+			Limpiar(caract,estado);
+			i=0;	
+		}
+	}
+		if(igualdad!=0){
+				strcat(stringFinal, estado);
+				Limpiar(caract,estado);
+				i=0;
+				
+				
+		}
+	
+	
+}
+
+		
+		
+	 
+	 
+
