@@ -1,3 +1,4 @@
 La difereencia de la Version_1 y Version_2  
 es que en la version 2 podemos introducir manualemente 
-por consola el nombre del fichero a leer  y donde deamos chuardarlo.
+por consola el nombre del fichero a leer  y el nombre  
+del fichero donde deseamos guardarlo. 
