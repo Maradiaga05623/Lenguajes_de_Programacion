@@ -1,6 +1,12 @@
 %{
 #include <math.h>
+#include <stdio.h>
 void Salir();
+void imprimir();
+void leer();
+void mientras();
+void repetir();
+void si();
 %}
 
 Entero	  [0-9]+
@@ -20,12 +26,22 @@ Cadena   [a-z][a-z0-9]+
                     atof( yytext ) );
             }
 
-Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|Imprimir|Leer|Mientras|Repetir|si|sino {
-            printf( "Una palabra clave: %s\n", yytext );
-		if(yytext=="Imprimir"){
-			printf("imprimiendo\n");}
-            }
+Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|sino {
+          {
+			printf("imprimiendo...:%s\n",yytext);}
+	    if(yytext="Leer"){
+		int i;
+		scanf("%i",&i);
+			}		
+		else
+	    printf( "Una palabra clave: %s\n", yytext );}
+Imprimir  {imprimir();}
+Leer      {leer();}
+Mientras   {mientras();}
+Repetir    {repetir();}
+si	    {si();}
 
+		
 Salir	    { Salir();}
 		
 "+"|"-"|"*"|"/"   printf( "Un operador: %s\n", yytext );
@@ -56,3 +72,10 @@ void Salir(){
 	printf("Saliendo...");
 	exit(0);
 }
+void imprimir(){
+	printf("estoy imprimiendo");
+}
+void leer(){printf("estoy leyendo");}
+void repetir(){printf("metodo iteracion repetir");}
+void mientras(){printf("metodo iteracion mientras");}
+void si(){printf("metodo condicion si");}
