@@ -73,9 +73,12 @@ void Salir(){
 	exit(0);
 }
 void imprimir(){
-	printf("estoy imprimiendo");
+	printf("estoy imprimiendo\n");
 }
-void leer(){printf("estoy leyendo");}
+void leer(){printf("estoy leyendo\n");
+		int i;
+		scanf("%i",&i)	;
+               printf("estoy imprimiendo: %i\n",i);  }
 void repetir(){printf("metodo iteracion :repetir\n");}
 void mientras(){printf("metodo iteracion: mientras\n");}
 void si(){printf("metodo condicion :si\n");}
