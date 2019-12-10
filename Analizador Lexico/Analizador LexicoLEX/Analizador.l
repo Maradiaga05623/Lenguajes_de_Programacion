@@ -39,7 +39,7 @@ Imprimir  {imprimir();}
 Leer      {leer();}
 Mientras   {mientras();}
 Repetir    {repetir();}
-si	    {si();}
+Si	    {si();}
 
 		
 Salir	    { Salir();}
@@ -76,6 +76,6 @@ void imprimir(){
 	printf("estoy imprimiendo");
 }
 void leer(){printf("estoy leyendo");}
-void repetir(){printf("metodo iteracion repetir");}
-void mientras(){printf("metodo iteracion mientras");}
-void si(){printf("metodo condicion si");}
+void repetir(){printf("metodo iteracion :repetir\n");}
+void mientras(){printf("metodo iteracion: mientras\n");}
+void si(){printf("metodo condicion :si\n");}
