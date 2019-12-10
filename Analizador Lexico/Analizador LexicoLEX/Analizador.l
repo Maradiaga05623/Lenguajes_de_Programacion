@@ -3,39 +3,36 @@
 void Salir();
 %}
 
-DIGITO   [0-9]
-ID       [a-z][a-z0-9]*
-MAY	 [A-Z]
-min	  [a-z]
-
-
+Entero	  [0-9]+
+Decimal   [0-9]+"."[0-9]+
+digito    [0-9]
+Cadena   [a-z][a-z0-9]+
 %%
-{MAY}  {printf("Letra Mayuscula: %s\n",yytext);}
-{min}  {printf("Letra Minuscula: %s\n",yytext);}
 
+{Cadena} {printf("Cadena: %s\n",yytext);}
 
-{DIGITO}+   {
-            printf( "Un entero: %s (%d)\n", yytext,
+{Entero}   {printf( "Un entero: %s (%d)\n", yytext,
                     atoi( yytext ) );
             }
 
-{DIGITO}+"."{DIGITO}*      {
-            printf( "Un real: %s (%g)\n", yytext,
+{Decimal}      {
+            printf( "Un decimal: %s (%g)\n", yytext,
                     atof( yytext ) );
             }
 
-Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|imprimir|Leer|Mientras|Repetir|si|sino {
+Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|Imprimir|Leer|Mientras|Repetir|si|sino {
             printf( "Una palabra clave: %s\n", yytext );
+		if(yytext=="Imprimir"){
+			printf("imprimiendo\n");}
             }
-Salir	    { Salir();}
-		/*
-{ID}        printf( "Un identificador: %s\n", yytext );*/
 
+Salir	    { Salir();}
+		
 "+"|"-"|"*"|"/"   printf( "Un operador: %s\n", yytext );
 
-"{"[^}\n]*"}"     
+"{"[^}\n]*"}"     ;
 
-[ \t\n]+      
+[ \t\n]+      ;
 
 .           printf( "Caracter no reconocido: %s\n", yytext );
 
