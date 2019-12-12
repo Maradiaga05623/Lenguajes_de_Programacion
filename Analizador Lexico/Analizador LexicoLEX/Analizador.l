@@ -13,6 +13,7 @@ Entero	  [0-9]+
 Decimal   [0-9]+"."[0-9]+
 digito    [0-9]
 Cadena   [a-z][a-z0-9]+
+
 %%
 
 {Cadena} {printf("Cadena: %s\n",yytext);}
@@ -26,15 +27,10 @@ Cadena   [a-z][a-z0-9]+
                     atof( yytext ) );
             }
 
-Carácter|cursor|Decimal|Definir|Entero|finsi|Hasta|sino {
+Caracter|Cursor|Decimal|Definir|Entero|finsi|Hasta|sino {
           {
-			printf("imprimiendo...:%s\n",yytext);}
-	    if(yytext="Leer"){
-		int i;
-		scanf("%i",&i);
-			}		
-		else
-	    printf( "Una palabra clave: %s\n", yytext );}
+			printf("Palabra Reservada: %s\n",yytext);}
+	    }
 Imprimir  {imprimir();}
 Leer      {leer();}
 Mientras   {mientras();}
@@ -44,7 +40,8 @@ Si	    {si();}
 		
 Salir	    { Salir();}
 		
-"+"|"-"|"*"|"/"   printf( "Un operador: %s\n", yytext );
+"+"|"-"|"*"|"/"                {printf( "Un operador aritmetico: %s\n", yytext );}
+"="|"<>"|"<"|">"|"<="|">="     {printf( "operador relacional: %s\n", yytext );}
 
 "{"[^}\n]*"}"     ;
 
