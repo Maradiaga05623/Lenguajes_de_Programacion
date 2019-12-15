@@ -48,9 +48,16 @@ clase_carrera(topicos,ing_sistemas).
 
 alumno_clase_promedio(hector,redes,65).
 alumno_clase_promedio(sergio,topicos,56).
-alumno_clase_promedio(paola,concreto,43).
-alumno_clase_promedio(gerson,electromagnetismo,65).
-alumno_clase_promedio(daniela,derecho_penal,74).
+alumno_clase_promedio(paola,concreto1,43).
+alumno_clase_promedio(gerson,intro_mecanica,65).
+alumno_clase_promedio(daniela,codigo_penal,74).
+
+
+alumno_clase(X,Y):-carrera_alumno(Z,X),clase_carrera(Y,Z),alumno(X).
+promedio(X,Y):- alumno_clase(X,Y),alumno_clase_promedio(X,Y,Z),write(Z).
+paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),Z>=65,write(aprobo:Z).
+
+
 
 
 
