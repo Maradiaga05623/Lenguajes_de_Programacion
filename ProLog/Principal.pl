@@ -15,6 +15,24 @@ alumno(gerson).
 alumno(paola).
 alumno(maria).
 
+
+%lista alumnos con su respectivo sexo.
+sexo_alumno(masculino,miguel).
+sexo_alumno(masculino,alonzo).
+sexo_alumno(masculino,sergio).
+sexo_alumno(femenino,rosa).
+sexo_alumno(masculino,kevin).
+sexo_alumno(femenino,marcela).
+sexo_alumno(masculino,fausto).
+sexo_alumno(masculino,hector).
+sexo_alumno(femenino,marlen).
+sexo_alumno(femenino,daniela).
+sexo_alumno(masculino,daniel).
+sexo_alumno(femenino,cindy).
+sexo_alumno(masculino,gerson).
+sexo_alumno(femenino,paola).
+sexo_alumno(femenino,maria).
+
 %Nombre de las carreras en existencia.
 carrera(ing_sistemas).
 carrera(ing_electrica).
@@ -24,9 +42,9 @@ carrera(lic_matematica).
 carrera(lic_banca_y_finanzas).
 carrera(abogacia).
 
-%Sexo de los estudiantes.
-sexo(masculino).
-sexo(femenino).
+
+
+
 
 %lista de carreras con sus  respectivos alumnos.
 carrera_alumno(ing_sistemas,sergio).

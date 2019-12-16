@@ -28,7 +28,7 @@ carrera(abogacia).
 sexo(masculino).
 sexo(femenino).
 
-%Carrera que estudia cada alumno.
+%lista de carreras con sus  respectivos alumnos.
 carrera_alumno(ing_sistemas,sergio).
 carrera_alumno(ing_sistemas,hector).
 carrera_alumno(ing_mecanica,gerson).
@@ -38,7 +38,7 @@ carrera_alumno(lic_matematica,rosa).
 carrera_alumno(ing_civil,paola).
 carrera_alumno(nutricion,maria).
 
-%Clases correspondientes a cada carrera.
+%Lista de Clases correspondientes a cada carrera.
 clase_carrera(concreto1,ing_civil).
 clase_carrera(intro_mecanica,ing_mecanica).
 clase_carrera(calculo3,lic_matematicas).
