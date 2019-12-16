@@ -82,8 +82,6 @@ alumno_clase_promedio(daniela,codigo_penal,74).
 alumno_clase_promedio(maria,herbalife,95).
 alumno_clase_promedio(maria,dietetica,100).
 
-
-
 % Esta regla nos sirve para verificar que el alumno tenga la clase
 % correpondiente a su carrera.
 alumno_clase(X,Y):-carrera_alumno(Z,X),clase_carrera(Y,Z),alumno(X).
@@ -95,7 +93,6 @@ promedio(X,Y):- alumno_clase(X,Y),alumno_clase_promedio(X,Y,Z),write(Z).
 % Esta regla nos sirve para comprobar si el alumno aprobo o reprobo la
 % clase.
 paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),(Z>=65,write(aprobo:Z);Z<65,write(reprobo:Z)).
-
 
 
 
