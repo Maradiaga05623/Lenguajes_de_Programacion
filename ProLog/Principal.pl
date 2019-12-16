@@ -13,6 +13,7 @@ alumno(daniel).
 alumno(cindy).
 alumno(gerson).
 alumno(paola).
+alumno(maria).
 
 %Nombre de las carreras en existencia.
 carrera(ing_sistemas).
@@ -51,8 +52,8 @@ clase_carrera(estructuras,ing_civil).
 clase_carrera(derecho_laboral,abogacia).
 clase_carrera(termodinamica,ing_electrica).
 clase_carrera(topicos,ing_sistemas).
-clase_carrera(herbalife,maria).
-clase_carrera(dietetica,maria).
+clase_carrera(herbalife,nutricion).
+clase_carrera(dietetica,nutricion).
 
 %Nombre de alumno con su respectivo promedio en la clase.
 alumno_clase_promedio(hector,redes,65).
@@ -69,13 +70,13 @@ alumno_clase_promedio(maria,dietetica,100).
 % correpondiente a su carrera.
 alumno_clase(X,Y):-carrera_alumno(Z,X),clase_carrera(Y,Z),alumno(X).
 
-%Esta regla nos sirve para mostrar el promedio del alumno en la clase.
+% Esta regla nos sirve para mostrar el promedio del alumno en la clase y
+% lo imprime en la consola.
 promedio(X,Y):- alumno_clase(X,Y),alumno_clase_promedio(X,Y,Z),write(Z).
 
-% Esta regla nos sirve para comprobar si el alumno aprobo o reporbo la
+% Esta regla nos sirve para comprobar si el alumno aprobo o reprobo la
 % clase.
 paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),(Z>=65,write(aprobo:Z);Z<65,write(reprobo:Z)).
-% paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),Z<65,write(reprobo:Z).
 
 
 
