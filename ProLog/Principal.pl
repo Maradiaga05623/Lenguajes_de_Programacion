@@ -68,8 +68,9 @@ promedio(X,Y):- alumno_clase(X,Y),alumno_clase_promedio(X,Y,Z),write(Z).
 
 % Esta regla nos sirve para comprobar si el alumno aprobo o reporbo la
 % clase.
-paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),Z>=65,write(aprobo:Z).
-paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),Z<65,write(reprobo:Z).
+paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),(Z>=65,write(aprobo:Z);Z<65,write(reprobo:Z)).
+% paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),Z<65,write(reprobo:Z).
+
 
 
 

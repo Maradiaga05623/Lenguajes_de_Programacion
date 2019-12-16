@@ -1,3 +1,4 @@
+%Nombre de los alumnos.
 alumno(miguel).
 alumno(alonzo).
 alumno(sergio).
@@ -13,6 +14,7 @@ alumno(cindy).
 alumno(gerson).
 alumno(paola).
 
+%Nombre de las carreras en existencia.
 carrera(ing_sistemas).
 carrera(ing_electrica).
 carrera(ing_civil).
@@ -21,9 +23,11 @@ carrera(lic_matematica).
 carrera(lic_banca_y_finanzas).
 carrera(abogacia).
 
+%Sexo de los estudiantes.
 sexo(masculino).
 sexo(femenino).
 
+%Carrera que estudia cada alumno.
 carrera_alumno(ing_sistemas,sergio).
 carrera_alumno(ing_sistemas,hector).
 carrera_alumno(ing_mecanica,gerson).
@@ -32,6 +36,7 @@ carrera_alumno(abogacia,daniela).
 carrera_alumno(lic_matematica,rosa).
 carrera_alumno(ing_civil,paola).
 
+%Clases correspondientes a cada carrera.
 clase_carrera(concreto1,ing_civil).
 clase_carrera(intro_mecanica,ing_mecanica).
 clase_carrera(calculo3,lic_matematicas).
@@ -46,6 +51,7 @@ clase_carrera(derecho_laboral,abogacia).
 clase_carrera(termodinamica,ing_electrica).
 clase_carrera(topicos,ing_sistemas).
 
+%Nombre de alumno con su respectivo promedio en la clase.
 alumno_clase_promedio(hector,redes,65).
 alumno_clase_promedio(sergio,topicos,56).
 alumno_clase_promedio(paola,concreto1,43).
@@ -53,9 +59,17 @@ alumno_clase_promedio(gerson,intro_mecanica,65).
 alumno_clase_promedio(daniela,codigo_penal,74).
 
 
+% Esta regla nos sirve para verificar que el alumno tenga la clase
+% correpondiente a su carrera.
 alumno_clase(X,Y):-carrera_alumno(Z,X),clase_carrera(Y,Z),alumno(X).
+
+%Esta regla nos sirve para mostrar el promedio del alumno en la clase.
 promedio(X,Y):- alumno_clase(X,Y),alumno_clase_promedio(X,Y,Z),write(Z).
+
+% Esta regla nos sirve para comprobar si el alumno aprobo o reporbo la
+% clase.
 paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),Z>=65,write(aprobo:Z).
+paso(X,Y):-alumno_clase_promedio(X,Y,Z),alumno_clase(X,Y),Z<65,write(reprobo:Z).
 
 
 
