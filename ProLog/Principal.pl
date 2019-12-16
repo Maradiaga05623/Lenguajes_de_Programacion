@@ -35,6 +35,7 @@ carrera_alumno(lic_banca_y_finanzas,kevin).
 carrera_alumno(abogacia,daniela).
 carrera_alumno(lic_matematica,rosa).
 carrera_alumno(ing_civil,paola).
+carrera_alumno(nutricion,maria).
 
 %Clases correspondientes a cada carrera.
 clase_carrera(concreto1,ing_civil).
@@ -50,6 +51,8 @@ clase_carrera(estructuras,ing_civil).
 clase_carrera(derecho_laboral,abogacia).
 clase_carrera(termodinamica,ing_electrica).
 clase_carrera(topicos,ing_sistemas).
+clase_carrera(herbalife,maria).
+clase_carrera(dietetica,maria).
 
 %Nombre de alumno con su respectivo promedio en la clase.
 alumno_clase_promedio(hector,redes,65).
@@ -57,6 +60,9 @@ alumno_clase_promedio(sergio,topicos,56).
 alumno_clase_promedio(paola,concreto1,43).
 alumno_clase_promedio(gerson,intro_mecanica,65).
 alumno_clase_promedio(daniela,codigo_penal,74).
+alumno_clase_promedio(maria,herbalife,95).
+alumno_clase_promedio(maria,dietetica,100).
+
 
 
 % Esta regla nos sirve para verificar que el alumno tenga la clase
